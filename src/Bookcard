@@ -1,0 +1,28 @@
+import React from 'react';
+import  "./index.css"
+const BookCard = ({ title, coverImage, genres, rating, summary }) => {
+  return (
+    <div className="card">
+      <img className="card-img-top" src={coverImage} alt={title} />
+      <div className="card-body">
+        <h5 className="card-title">{title}</h5>
+        <div className="card-badges">
+          {genres.map((genre, index) => (
+            <span key={index}>
+              <span className="badge badge-primary">{genre}</span>&nbsp;
+            </span>
+          ))}
+        </div>
+        <p className="card-rate">
+          <i className="fas fa-star text-warning"></i> {rating} <sub>/10</sub>
+        </p>
+        <p className="card-text">{summary}</p>
+        <button className="btn btn-block btn-primary">
+          <i className="fa fa-play" aria-label="icon-play"></i>
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default BookCard;

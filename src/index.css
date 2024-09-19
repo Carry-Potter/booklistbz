@@ -1,13 +1,78 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Stilovi za celokupni izgled */
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Helvetica Neue', sans-serif;
+  display: inline-flex;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.title {
+  text-align: center;
+  color: #4A4A4A;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+th {
+  background-color: #4A90E2;
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+  text-align: left;
+}
+
+td {
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.table-row:hover {
+  background-color: #F5A623;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.book-cover {
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.book-cover:hover {
+  transform: scale(1.1);
+}
+
+.episode-link {
+  color: #50E3C2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.episode-link:hover {
+  color: #F5A623;
+}
+
+.no-episode {
+  color: #4A4A4A;
+  font-style: italic;
+}
+
+/* Mobilna optimizacija */
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.9rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
 }
