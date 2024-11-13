@@ -13,14 +13,15 @@ body{
   background-color: #031721;
   color: #fff;
   text-align: center;
-  position: relative; /* Needed for positioning the logo */
+  position: relative; 
+  box-shadow: #211c03;
 }
 
 .netflix-title {
   
   font-size: 4.5rem;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: #e7da1b;
  
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
@@ -183,60 +184,7 @@ h3 {
   z-index: 1000; /* Ensures it stays on top */
 }
 
-@media (max-width: 4000px) {
-  .book-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-@media (max-width: 2000px) {
-  .book-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
-@media (max-width: 1200px) {
-  .book-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .logo {
-    width: 200px;
-  }
-}
-
-@media (max-width: 900px) {
-  .book-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Mreža sa 5 kolona za veće ekrane */
-    gap: 20px;
-    justify-content: center; /* Centriranje kartica horizontalno */
-  }
-  .logo {
-    width: 100px;
-  }
-  
-  .book-card {
-    background-color: #052535;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 0 auto; /* Centriranje svake kartice */
-  }
-}
-
-@media (max-width: 600px) {
-  .book-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
-@media (max-width: 400px) {
-  .book-grid {
-    grid-template-columns: 1fr;
-  }
-}
 .book-card {
   z-index: 0;
   position: relative;
@@ -302,4 +250,91 @@ h3 {
 .episode-link:hover {
   background-color: #0a3950;
   cursor: pointer;
+}
+
+
+/* Grid layout */
+.book-grid {
+  padding-left: 10%;
+  padding-right: 10%;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Smanjeno sa 200px na 150px */
+  gap: 15px; /* Smanjen razmak između kartica */
+}
+
+.book-card {
+  padding: 15px; /* Smanjeno sa 20px na 15px */
+  margin: 5px; /* Smanjeno sa 10px na 5px */
+  border-radius: 5px; /* Smanjen radijus ivica */
+}
+
+.book-cover {
+  width: 150px; /* Smanjeno sa 250px na 150px */
+  height: 220px; /* Smanjeno sa 365px na 220px */
+  border-radius: 4px; /* Ostavljen radijus ivica */
+}
+
+h3 {
+  font-size: 1rem; /* Smanjena veličina fonta */
+  min-height: 40px; /* Smanjena minimalna visina */
+}
+
+.author, .suggested-by, .episode-link, .no-episode {
+  font-size: 0.7rem; /* Smanjena veličina fonta */
+}
+
+.book-info {
+  height: 150px; /* Smanjena visina informacija */
+}
+
+.episode-link {
+  padding: 5px 10px; /* Smanjena veličina dugmeta */
+  font-size: 0.9em; /* Smanjena veličina fonta dugmeta */
+}
+
+@media (max-width: 4000px) {
+  .book-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media (max-width: 2000px) {
+  .book-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1600px) {
+  .book-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .logo {
+    width: 200px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .book-grid {
+    
+    grid-template-columns: repeat(2, 1fr); /* Mreža sa 5 kolona za veće ekrane */
+   
+  }
+  .logo {
+    width: 100px;
+  }
+  
+  
+}
+@media (max-width: 700px) {
+  .book-grid {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center; /* Dodaje centriranje horizontalno */
+    align-items: center; /* Dodaje centriranje vertikalno ako je potrebno */
+  }
+}
+
+@media (max-width: 450px) {
+  .book-grid {
+    grid-template-columns: 1fr;
+    justify-content: center; /* Dodaje centriranje horizontalno */
+    align-items: center; /* Dodaje centriranje vertikalno ako je potrebno */
+  }
 }
